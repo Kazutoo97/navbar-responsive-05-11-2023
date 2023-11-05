@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #fee5f0;
+}
+
+nav {
+  background-color: #fb2576;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 100;
+}
+
+nav .navbar {
+  background-color: #fb2576;
+  height: 100%;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .menu-open {
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar .menu .sidebar {
+  display: none;
+}
+
+.navbar .menu .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.menu .nav-links li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+.menu .nav-links li a {
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu .nav-links li a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  width: 0px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.menu .nav-links li:hover a::before {
+  width: 100%;
+}
+
+.navbar .search {
+  display: inline-flex;
+  font-size: 25px;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    background: #ff66a5;
+    position: fixed;
+    top: 0;
+    left: -1000px;
+    width: 350px;
+    height: 100%;
+    padding: 20px 30px;
+    z-index: 100;
+    transition: all 0.3s ease;
+  }
+
+  .menu.active {
+    left: 0;
+  }
+
+  .navbar .menu-open {
+    display: block;
+  }
+
+  .navbar .menu .sidebar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar .menu .sidebar a {
+    font-size: 32px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .navbar .menu .sidebar .menu-close {
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .navbar .menu .nav-links {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
+  .navbar .menu .nav-links li a {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .menu {
+    width: 100%;
+  }
+}
